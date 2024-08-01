@@ -11,7 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('setting', function (Blueprint $table) {
+            $table->increments('id_setting');
+            $table->string('nama_perusahaan');
+            $table->text('alamat')->nullable();
+            $table->string('no_hp');
+            $table->tinyInteger('tipe_nota');
+            $table->string('path_logo');
+            $table->string('path_kartu_member');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -19,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+       Schema::dropIfExists('setting');
     }
 };
