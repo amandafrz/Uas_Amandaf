@@ -26,7 +26,7 @@
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         },
-        "file": [
+        "files":[
             "app/Http/Helpers/helpers.php"
         ]
     },
