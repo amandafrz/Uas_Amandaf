@@ -30,3 +30,13 @@ function
 
     return $terbilang;
  }
+
+function tanggal_indonesia($tgl)
+{
+    $nama_bulan = array(1 =>
+        'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+    );
+    // 2021-03-07
+    $tahun = substr($tgl, 0, 4);
+    return $tahun;
+}
