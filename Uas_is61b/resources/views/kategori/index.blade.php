@@ -33,11 +33,23 @@
           </div>
         </div>
       </div>
-
+@includeIf('kategori.form')
 @endsection
 
 @push('scripts')
 <script>
-    $('.table').DataTable()
+   let table;
+
+   $(function (){
+    table = $('.table').DataTable({
+        processing: true,
+        autoWidth: false,
+        ajax: {
+            url: '{{ route('kategori.data')} }',
+        }
+    });
+
+   });
+
 </script>
 @endpush
