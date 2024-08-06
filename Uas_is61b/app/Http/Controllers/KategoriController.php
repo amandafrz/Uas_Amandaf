@@ -32,7 +32,7 @@ class KategoriController extends Controller
     {
         $kat = new Kategori;
         $kat->nm_kat = $request->nm_kat;
-        $jur->save();
+        $kat->save();
 
         return redirect('/kategori/');
     }

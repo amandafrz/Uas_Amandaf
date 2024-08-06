@@ -19,7 +19,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -133,32 +133,34 @@
           <ul class="menu-inner py-1">
             <!-- Dashboards -->
             <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
+              <a href="/home" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons ri-home-smile-line"></i>
                 <div data-i18n="Dashboards">Dashboards</div>
               </a>
-            <li class="menu-item">
-              <a href="/kategori" class="menu-link">
-                <i class="menu-icon tf-icons ri-mail-open-line"></i>
-                <div data-i18n="Email">Kategori</div>
-              </a>
-            </li>
-            <li class="menu-item">
+              <li class="menu-item">
+                <a href="/kategori" class="menu-link">
+                  <i class="menu-icon tf-icons ri-list-unordered"></i>
+                  <div data-i18n="Kategori">Kategori</div>
+                </a>
+              </li>
+              <li class="menu-item">
                 <a href="/produk" class="menu-link">
-                  <i class="menu-icon tf-icons ri-mail-open-line"></i>
-                  <div data-i18n="Email">Produk</div>
+                  <i class="menu-icon tf-icons ri-product-hunt-line"></i>
+                  <div data-i18n="Produk">Produk</div>
                 </a>
-            </li>
-            <li class="menu-item">
-                <a href="/supplier" class="menu-link">
-                  <i class="menu-icon tf-icons ri-mail-open-line"></i>
-                  <div data-i18n="Email">Supplier</div>
-                </a>
-            </li>
+              </li>
 
-            <!-- Misc -->
+              <li class="menu-item">
+                <a href="/supplier" class="menu-link">
+                  <i class="menu-icon tf-icons ri-truck-line"></i>
+                  <div data-i18n="Supplier">Supplier</div>
+                </a>
+              </li>
+
+
+            <!-- Transaksi -->
             <li class="menu-header mt-5">
-              <span class="menu-header-text" data-i18n="Misc">Misc</span>
+              <span class="menu-header-text" data-i18n="Transaksi">Transaksi</span>
             </li>
             <li class="menu-item">
               <a href="https://pixinvent.ticksy.com/" target="_blank" class="menu-link">
@@ -424,7 +426,7 @@
                     <li>
                       <div class="d-grid px-4 pt-2 pb-1">
                         <a class="btn btn-sm btn-danger d-flex" href="{{ route('logout') }}" onclick="event.preventDefault();
-        document.getElementById('logout-form').submit();">
+                            document.getElementById('logout-form').submit();">
                           <small class="align-middle">Logout</small>
                           <i class="ri-logout-box-r-line ms-2 ri-16px"></i>
                         </a>
