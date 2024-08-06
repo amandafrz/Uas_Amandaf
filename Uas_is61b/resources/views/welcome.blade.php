@@ -4,7 +4,7 @@
     Dashboard
 @endsection
 
-s
+
 @section('breadcrumb')
     @parent
     <li class="active">Dashboard</li>
