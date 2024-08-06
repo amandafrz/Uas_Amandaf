@@ -137,6 +137,9 @@
                 <i class="menu-icon tf-icons ri-home-smile-line"></i>
                 <div data-i18n="Dashboards">Dashboards</div>
               </a>
+              <li class="menu-header mt-5">
+                <span class="menu-header-text" data-i18n="Master">Master</span>
+              </li>
               <li class="menu-item">
                 <a href="/kategori" class="menu-link">
                   <i class="menu-icon tf-icons ri-list-unordered"></i>
@@ -163,21 +166,41 @@
               <span class="menu-header-text" data-i18n="Transaksi">Transaksi</span>
             </li>
             <li class="menu-item">
-              <a href="https://pixinvent.ticksy.com/" target="_blank" class="menu-link">
-                <i class="menu-icon tf-icons ri-lifebuoy-line"></i>
-                <div data-i18n="Support">Support</div>
-              </a>
-            </li>
+                <a href="/kategori" class="menu-link">
+                  <i class="menu-icon tf-icons ri-list-unordered"></i>
+                  <div data-i18n="Pengeluaran">Pengeluaran</div>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="/produk" class="menu-link">
+                  <i class="menu-icon tf-icons ri-product-hunt-line"></i>
+                  <div data-i18n="Pembelian">Pembelian</div>
+                </a>
+              </li>
             <li class="menu-item">
-              <a
-                href="https://demos.pixinvent.com/materialize-html-admin-template/documentation/"
-                target="_blank"
-                class="menu-link">
-                <i class="menu-icon tf-icons ri-article-line"></i>
-                <div data-i18n="Documentation">Documentation</div>
-              </a>
-            </li>
-          </ul>
+                <a href="/supplier" class="menu-link">
+                  <i class="menu-icon tf-icons ri-truck-line"></i>
+                  <div data-i18n="Penjualan">Penjualan</div>
+                </a>
+                <li class="menu-item">
+                    <a href="/supplier" class="menu-link">
+                      <i class="menu-icon tf-icons ri-truck-line"></i>
+                      <div data-i18n="Transaksi Lama">Transaksi Lama</div>
+                    </a>
+          </li>
+          <li class="menu-item">
+            <a href="/supplier" class="menu-link">
+              <i class="menu-icon tf-icons ri-truck-line"></i>
+              <div data-i18n="Transaksi Baru">Transaksi Baru</div>
+            </a></li>
+          <li class="menu-header mt-5">
+            <span class="menu-header-text" data-i18n="Report">Report</span>
+          </li>
+          <li class="menu-item">
+            <a href="/supplier" class="menu-link">
+              <i class="menu-icon tf-icons ri-truck-line"></i>
+              <div data-i18n=" Laporan">Laporan</div>
+            </a>
         </aside>
         <!-- / Menu -->
 

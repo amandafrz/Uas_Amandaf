@@ -46,3 +46,10 @@ Route::post('/supplier/store', [SupplierController::class, 'store'])->middleware
 Route::get('/supplier/edit/{id}', [SupplierController::class, 'edit'])->middleware('auth');
 Route::put('/supplier/{id}', [SupplierController::class, 'update'])->middleware('auth');
 Route::delete('/supplier/{id}', [SupplierController::class, 'destroy'])->middleware('auth');
+// Pengeluaran
+Route::get('/pengeluaran', [SupplierController::class, 'index'])->middleware('auth');
+Route::get('/pengeluaran/form/', [SupplierController::class, 'create'])->middleware('auth');
+Route::post('/pengeluaran/store', [SupplierController::class, 'store'])->middleware('auth');
+Route::get('/pengeluaran/edit/{id}', [SupplierController::class, 'edit'])->middleware('auth');
+Route::put('/pengeluaran/{id}', [SupplierController::class, 'update'])->middleware('auth');
+Route::delete('/pengeluaran/{id}', [SupplierController::class, 'destroy'])->middleware('auth');
