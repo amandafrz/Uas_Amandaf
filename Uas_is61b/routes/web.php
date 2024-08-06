@@ -4,6 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\PenjualanController;
+use App\Http\Controllers\PembelianController;
+use App\Http\Controllers\PengeluaranController;
+use App\Http\Controllers\TransaksiLamaController;
+use App\Http\Controllers\TransaksiBaruController;
+use App\Http\Controllers\LaporanController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,9 +53,44 @@ Route::get('/supplier/edit/{id}', [SupplierController::class, 'edit'])->middlewa
 Route::put('/supplier/{id}', [SupplierController::class, 'update'])->middleware('auth');
 Route::delete('/supplier/{id}', [SupplierController::class, 'destroy'])->middleware('auth');
 // Pengeluaran
-Route::get('/pengeluaran', [SupplierController::class, 'index'])->middleware('auth');
-Route::get('/pengeluaran/form/', [SupplierController::class, 'create'])->middleware('auth');
-Route::post('/pengeluaran/store', [SupplierController::class, 'store'])->middleware('auth');
-Route::get('/pengeluaran/edit/{id}', [SupplierController::class, 'edit'])->middleware('auth');
-Route::put('/pengeluaran/{id}', [SupplierController::class, 'update'])->middleware('auth');
-Route::delete('/pengeluaran/{id}', [SupplierController::class, 'destroy'])->middleware('auth');
+Route::get('/pengeluaran', [PengeluaranController::class, 'index'])->middleware('auth');
+Route::get('/pengeluaran/form/', [PengeluaranController::class, 'create'])->middleware('auth');
+Route::post('/pengeluaran/store', [PengeluaranController::class, 'store'])->middleware('auth');
+Route::get('/pengeluaran/edit/{id}', [PengeluaranController::class, 'edit'])->middleware('auth');
+Route::put('/pengeluaran/{id}', [PengeluaranController::class, 'update'])->middleware('auth');
+Route::delete('/pengeluaran/{id}', [PengeluaranController::class, 'destroy'])->middleware('auth');
+// pembelian
+Route::get('/pembelian', [PembelianController::class, 'index'])->middleware('auth');
+Route::get('/pembelian/form/', [PembelianController::class, 'create'])->middleware('auth');
+Route::post('/pembelian/store', [PembelianController::class, 'store'])->middleware('auth');
+Route::get('pembelian/edit/{id}', [PembelianController::class, 'edit'])->middleware('auth');
+Route::put('/pembelian/{id}', [PembelianController::class, 'update'])->middleware('auth');
+Route::delete('/pembelian/{id}', [PembelianController::class, 'destroy'])->middleware('auth');
+// Penjualan
+Route::get('/penjualan', [PenjualanController::class, 'index'])->middleware('auth');
+Route::get('/penjualan/form/', [PenjualanController::class, 'create'])->middleware('auth');
+Route::post('/penjualan/store', [PenjualanController::class, 'store'])->middleware('auth');
+Route::get('/penjualan/edit/{id}', [PenjualanController::class, 'edit'])->middleware('auth');
+Route::put('/penjualan/{id}', [PenjualanController::class, 'update'])->middleware('auth');
+Route::delete('/penjualan/{id}', [PenjualanController::class, 'destroy'])->middleware('auth');
+// TransaksiLama
+Route::get('/transaksilama', [TransaksiLamaController::class, 'index'])->middleware('auth');
+Route::get('/transaksilama/form/', [TransaksiLamaController::class, 'create'])->middleware('auth');
+Route::post('/transaksilama/store', [TransaksiLamaController::class, 'store'])->middleware('auth');
+Route::get('transaksilama/edit/{id}', [TransaksiLamaController::class, 'edit'])->middleware('auth');
+Route::put('/transaksilama/{id}', [TransaksiLamaController::class, 'update'])->middleware('auth');
+Route::delete('/transaksilama/{id}', [TransaksiLamaController::class, 'destroy'])->middleware('auth');
+// TransaksiBaru
+Route::get('/transaksibaru', [TransaksiBaruController::class, 'index'])->middleware('auth');
+Route::get('/transaksibaru/form/', [TransaksiBaruController::class, 'create'])->middleware('auth');
+Route::post('/transaksibaru/store', [TransaksiBaruController::class, 'store'])->middleware('auth');
+Route::get('/transaksibaru/edit/{id}', [TransaksiBaruController::class, 'edit'])->middleware('auth');
+Route::put('/transaksibaru/{id}', [TransaksiBaruController::class, 'update'])->middleware('auth');
+Route::delete('/transaksibaru/{id}', [TransaksiBaruController::class, 'destroy'])->middleware('auth');
+// Laporan
+Route::get('/laporan', [LaporanController::class, 'index'])->middleware('auth');
+Route::get('/laporan/form/', [LaporanController::class, 'create'])->middleware('auth');
+Route::post('/laporan/store', [LaporanController::class, 'store'])->middleware('auth');
+Route::get('/laporan/edit/{id}', [LaporanController::class, 'edit'])->middleware('auth');
+Route::put('/laporan/{id}', [LaporanController::class, 'update'])->middleware('auth');
+Route::delete('/laporan/{id}', [LaporanController::class, 'destroy'])->middleware('auth');
