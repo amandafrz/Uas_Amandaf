@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('penjualans', function (Blueprint $table) {
             $table->id();
+            $table->string('kode')->unique();
+            $table->string('keterangan');
+            $table->string('produks_id'); // Perbaikan typo dari 'tabel' menjadi 'table'
+            $table->date('tanggal');
             $table->timestamps();
         });
     }
@@ -25,3 +29,4 @@ return new class extends Migration
         Schema::dropIfExists('penjualans');
     }
 };
+

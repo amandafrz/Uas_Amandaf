@@ -31,8 +31,16 @@
             @method('PUT')
             @csrf
             <div class="mb-3">
+                <label class="form-label">Kode Produk</label>
+                <input type="text" value="{{$pro->kode}}" class="form-control" name="kode">
+            </div>
+            <div class="mb-3">
                 <label class="form-label">Nama Produk</label>
                 <input type="text" value="{{$pro->nm_produk}}" class="form-control" name="nm_produk">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Kategori</label>
+                <input type="text" value="{{$pro->kategoris_id}}" class="form-control" name="nm_produk">
             </div>
             <div class="mb-3">
                 <label class="form-label">Merk</label>

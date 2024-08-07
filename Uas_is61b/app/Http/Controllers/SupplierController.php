@@ -31,6 +31,7 @@ class SupplierController extends Controller
     public function store(Request $request)
     {
         $sup = new Supplier;
+        $sup->kode = $request->kode;
         $sup->nm_sup = $request->nm_sup;
         $sup->alamat = $request->alamat;
         $sup->hp = $request->hp;
@@ -62,6 +63,7 @@ class SupplierController extends Controller
     public function update(Request $request, string $id)
     {
         $sup = Supplier::find($id);
+        $sup->kode = $request->kode;
         $sup->nm_sup = $request->nm_sup;
         $sup->alamat = $request->alamat;
         $sup->hp = $request->hp;

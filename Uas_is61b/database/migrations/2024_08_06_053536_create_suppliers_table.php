@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('suppliers', function (Blueprint $table) {
             $table->id();
+            $table->string('kode')->unique();
             $table->string('nm_sup');
             $table->string('alamat');
             $table->string('hp');

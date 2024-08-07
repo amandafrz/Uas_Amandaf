@@ -16,7 +16,9 @@
             <thead>
                 <tr>
                     <th>No</th>
+                    <th>Kode Produk</th>
                     <th>Nama Produk</th>
+                    <th>Kategori</th>
                     <th>Merk</th>
                     <th>Harga Beli</th>
                     <th>Diskon</th>
@@ -28,8 +30,10 @@
             <tbody>
                 @forelse ($pro as $item)
                     <tr>
-                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $nomor++ }}</td>
+                        <td>{{ $item->kode }}</td>
                         <td>{{ $item->nm_produk }}</td>
+                        <td>{{ $item->kategoris->nm_kat }}</td>
                         <td>{{ $item->merk }}</td>
                         <td>{{ $item->harga_bel }}</td>
                         <td>{{ $item->diskon }}</td>
@@ -54,8 +58,16 @@
                                             <table class="table">
                                                 <tbody>
                                                     <tr>
+                                                        <td>Kode Produk</td>
+                                                        <th>{{ $item->kode }}</th>
+                                                    </tr>
+                                                    <tr>
                                                         <td>Nama Produk</td>
                                                         <th>{{ $item->nm_produk }}</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Kategori</td>
+                                                        <th scope="row">{{ $item->kategoris->nm_kat }}</th>
                                                     </tr>
                                                     <tr>
                                                         <td>Merk</td>
@@ -104,7 +116,7 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            Yakin ingin menghapus data Produk <b>{{ $item->nm_produk }}</b>?
+                                            Yakin ingin menghapus data Produk <b>{{$item->nm_produk}}</b>?
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
@@ -121,7 +133,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="8" class="text-center">Tidak Ada Data</td>
+                        <td colspan="9" class="text-center">Tidak Ada Data</td>
                     </tr>
                 @endforelse
             </tbody>

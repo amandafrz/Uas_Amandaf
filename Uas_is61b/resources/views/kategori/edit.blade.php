@@ -31,7 +31,11 @@
             @method('PUT')
             @csrf
             <div class="mb-3">
-                <label class="form-label">Nama Kategori</label>
+                <label class="form-label">Kode Kategori</label>
+                <input type="text" value="{{$kat->kode}}" class="form-control" name="kode">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Kategori</label>
                 <input type="text" value="{{$kat->nm_kat}}" class="form-control" name="nm_kat">
             </div>
             <button type="submit" class="btn btn-primary">Edit Data</button>

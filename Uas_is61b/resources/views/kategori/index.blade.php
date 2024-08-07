@@ -16,7 +16,8 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Nama Kategori</th>
+                    <th>Kode Kategori</th>
+                    <th> Kategori</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -24,9 +25,10 @@
                 @forelse ($kat as $item)
                     <tr>
                         <td>{{$nomor++}}</td>
+                        <td>{{$item->kode}}</td>
                         <td>{{$item->nm_kat}}</td>
                         <td>
-                           
+
                             <a href="/kategori/edit/{{$item->id}}" class="btn btn-info btn-xs"><i class="fa fa-pencil-alt"></i></a>
 
                             <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#hapus{{$item->id}}">
@@ -42,7 +44,7 @@
                                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                    Yakin ingin menghapus data jurusan <b>{{$item->nm_kat}}</b>?
+                                    Yakin ingin menghapus data Kategori <b>{{$item->nm_kat}}</b>?
                                     </div>
                                     <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>

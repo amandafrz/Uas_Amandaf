@@ -31,6 +31,7 @@ class KategoriController extends Controller
     public function store(Request $request)
     {
         $kat = new Kategori;
+        $kat->kode = $request->kode;
         $kat->nm_kat = $request->nm_kat;
         $kat->save();
 

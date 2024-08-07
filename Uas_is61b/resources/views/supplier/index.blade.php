@@ -16,6 +16,7 @@
             <thead>
                 <tr>
                     <th>No</th>
+                    <th>Kode Supplier</th>
                     <th>Nama Supplier</th>
                     <th>Alamat</th>
                     <th>No Hp</th>
@@ -26,6 +27,7 @@
                 @forelse ($sup as $item)
                     <tr>
                         <td>{{$nomor++}}</td>
+                        <td>{{$item->kode}}</td>
                         <td>{{$item->nm_sup}}</td>
                         <td>{{$item->alamat}}</td>
                         <td>{{$item->hp}}</td>
@@ -47,6 +49,10 @@
                                         <div class="modal-body">
                                             <table class="table">
                                                 <tbody>
+                                                    <tr>
+                                                        <td>Kode Supplier</td>
+                                                        <th>{{ $item->kode }}</th>
+                                                    </tr>
                                                     <tr>
                                                         <td>Nama Supplier</td>
                                                         <th>{{ $item->nm_sup }}</th>

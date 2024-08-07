@@ -29,6 +29,10 @@
         <form method="post" action="/supplier/store/">
             @csrf
             <div class="mb-3">
+                <label class="form-label">Kode Supplier</label>
+                <input type="text" class="form-control" name="kode">
+            </div>
+            <div class="mb-3">
                 <label class="form-label">Nama Supplier</label>
                 <input type="text" class="form-control" name="nm_sup">
             </div>

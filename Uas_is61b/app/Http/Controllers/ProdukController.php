@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produk;
-
+use App\Models\Kategori;
 class ProdukController extends Controller
 {
     /**
@@ -14,7 +14,7 @@ class ProdukController extends Controller
     {
         $nomor = 1;
         $pro = Produk::all();
-        return view('produk.index',compact('nomor','pro'));
+        return view('produk.index', compact('nomor', 'pro'));
     }
 
     /**
@@ -22,7 +22,8 @@ class ProdukController extends Controller
      */
     public function create()
     {
-        return view('produk.form');
+        $kat = Kategori::all();
+        return view('produk.form',compact('kat'));
     }
 
     /**
@@ -31,7 +32,9 @@ class ProdukController extends Controller
     public function store(Request $request)
     {
         $pro = new Produk;
+        $pro->kode = $request->kode;
         $pro->nm_produk = $request->nm_produk;
+        $pro->kategoris_id = $request->kategori;
         $pro->merk= $request->merk;
         $pro->harga_bel = $request->harga_bel;
         $pro->diskon = $request->diskon;

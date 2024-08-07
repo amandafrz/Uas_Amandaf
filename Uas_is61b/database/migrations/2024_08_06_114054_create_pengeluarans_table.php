@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('pengeluarans', function (Blueprint $table) {
             $table->id();
+            $table->string('kode')->unique();
+            $table->date('tanggal');
+            $table->string('keterangan');
+            $table->Integer('nominal');
             $table->timestamps();
         });
     }

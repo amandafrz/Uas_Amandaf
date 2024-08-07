@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','New Zikra || Produk')
+@section('title', 'Tambah Produk')
 
 @section('css')
 <link rel="icon" type="image/x-icon" href="{{asset('assets/img/favicon/favicon.ico')}}" />
@@ -24,21 +24,35 @@
 @section('content')
 <div class="card">
     <div class="card-header">
+        Tambah Produk
     </div>
     <div class="card-body">
         <form method="post" action="/produk/store/">
             @csrf
             <div class="mb-3">
+                <label class="form-label">Kode Produk</label>
+                <input type="text" class="form-control" name="kode" required>
+            </div>
+            <div class="mb-3">
                 <label class="form-label">Nama Produk</label>
-                <input type="text" class="form-control" name="nm_produk">
+                <input type="text" class="form-control" name="nm_produk" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Kategori</label>
+                <select name="kategori" class="form-control" id="nm_kat">
+                    <option value="">-Pilih Kategori-</option>
+                    @foreach ($kat as $item)
+                        <option value="{{ $item->id }}">{{ $item->nm_kat }}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="mb-3">
                 <label class="form-label">Merk</label>
-                <input type="text" class="form-control" name="merk">
+                <input type="text" class="form-control" name="merk" required>
             </div>
             <div class="mb-3">
                 <label class="form-label">Harga Beli</label>
-                <input type="text" class="form-control" name="harga_bel">
+                <input type="text" class="form-control" name="harga_bel" required>
             </div>
             <div class="mb-3">
                 <label class="form-label">Diskon</label>
@@ -46,11 +60,11 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Harga Jual</label>
-                <input type="text" class="form-control" name="harga_jul">
+                <input type="text" class="form-control" name="harga_jul" required>
             </div>
             <div class="mb-3">
                 <label class="form-label">Stok Produk</label>
-                <input type="text" class="form-control" name="stock">
+                <input type="text" class="form-control" name="stock" required>
             </div>
             <button type="submit" class="btn btn-primary">Tambah Data</button>
         </form>
