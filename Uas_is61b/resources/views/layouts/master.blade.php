@@ -165,11 +165,6 @@
             <li class="menu-header mt-5">
               <span class="menu-header-text" data-i18n="Transaksi">Transaksi</span>
             </li>
-            <li class="menu-item">
-                <a href="/kategori" class="menu-link">
-                  <i class="menu-icon tf-icons ri-list-unordered"></i>
-                  <div data-i18n="Pengeluaran">Pengeluaran</div>
-                </a>
               </li>
               <li class="menu-item">
                 <a href="/produk" class="menu-link">
@@ -183,24 +178,12 @@
                   <div data-i18n="Penjualan">Penjualan</div>
                 </a>
                 <li class="menu-item">
-                    <a href="/supplier" class="menu-link">
+                    <a href="/transaksi" class="menu-link">
                       <i class="menu-icon tf-icons ri-truck-line"></i>
-                      <div data-i18n="Transaksi Lama">Transaksi Lama</div>
+                      <div data-i18n="Transaksi">Transaksi</div>
                     </a>
           </li>
-          <li class="menu-item">
-            <a href="/supplier" class="menu-link">
-              <i class="menu-icon tf-icons ri-truck-line"></i>
-              <div data-i18n="Transaksi Baru">Transaksi Baru</div>
-            </a></li>
-          <li class="menu-header mt-5">
-            <span class="menu-header-text" data-i18n="Report">Report</span>
-          </li>
-          <li class="menu-item">
-            <a href="/supplier" class="menu-link">
-              <i class="menu-icon tf-icons ri-truck-line"></i>
-              <div data-i18n=" Laporan">Laporan</div>
-            </a>
+
         </aside>
         <!-- / Menu -->
 
