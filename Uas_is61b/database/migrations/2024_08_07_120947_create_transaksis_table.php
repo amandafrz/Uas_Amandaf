@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nama');
             $table->Integer('total');
             $table->string('kdd')->unique();
+            $table->bigInteger('produks_id');
             $table->Integer('qty');
             $table->timestamps();
         });
