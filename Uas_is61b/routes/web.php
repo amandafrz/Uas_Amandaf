@@ -4,11 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\ProdukController;
-use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\PembelianController;
-use App\Http\Controllers\PengeluaranController;
 use App\Http\Controllers\TransaksiController;
-use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\KaryawanController;
 /*
 |--------------------------------------------------------------------------
@@ -52,13 +49,7 @@ Route::post('/supplier/store', [SupplierController::class, 'store'])->middleware
 Route::get('/supplier/edit/{id}', [SupplierController::class, 'edit'])->middleware('auth');
 Route::put('/supplier/{id}', [SupplierController::class, 'update'])->middleware('auth');
 Route::delete('/supplier/{id}', [SupplierController::class, 'destroy'])->middleware('auth');
-// Pengeluaran
-Route::get('/pengeluaran', [PengeluaranController::class, 'index'])->middleware('auth');
-Route::get('/pengeluaran/form/', [PengeluaranController::class, 'create'])->middleware('auth');
-Route::post('/pengeluaran/store', [PengeluaranController::class, 'store'])->middleware('auth');
-Route::get('/pengeluaran/edit/{id}', [PengeluaranController::class, 'edit'])->middleware('auth');
-Route::put('/pengeluaran/{id}', [PengeluaranController::class, 'update'])->middleware('auth');
-Route::delete('/pengeluaran/{id}', [PengeluaranController::class, 'destroy'])->middleware('auth');
+
 // pembelian
 Route::get('/pembelian', [PembelianController::class, 'index'])->middleware('auth');
 Route::get('/pembelian/form/', [PembelianController::class, 'create'])->middleware('auth');
@@ -66,21 +57,15 @@ Route::post('/pembelian/store', [PembelianController::class, 'store'])->middlewa
 Route::get('pembelian/edit/{id}', [PembelianController::class, 'edit'])->middleware('auth');
 Route::put('/pembelian/{id}', [PembelianController::class, 'update'])->middleware('auth');
 Route::delete('/pembelian/{id}', [PembelianController::class, 'destroy'])->middleware('auth');
-// Penjualan
-Route::get('/penjualan', [PenjualanController::class, 'index'])->middleware('auth');
-Route::get('/penjualan/form/', [PenjualanController::class, 'create'])->middleware('auth');
-Route::post('/penjualan/store', [PenjualanController::class, 'store'])->middleware('auth');
-Route::get('/penjualan/edit/{id}', [PenjualanController::class, 'edit'])->middleware('auth');
-Route::put('/penjualan/{id}', [PenjualanController::class, 'update'])->middleware('auth');
-Route::delete('/penjualan/{id}', [PenjualanController::class, 'destroy'])->middleware('auth');
 
-// Transaksi
+// transaksi
 Route::get('/transaksi', [TransaksiController::class, 'index'])->middleware('auth');
-// Route::get('/transaksi/form/', [TransaksiController::class, 'create'])->middleware('auth');
-// Route::post('/transaksi/store', [TransaksiController::class, 'store'])->middleware('auth');
-// Route::get('/transaksi/edit/{id}', [TransaksiController::class, 'edit'])->middleware('auth');
-// Route::put('/transaksi/{id}', [TransaksiController::class, 'update'])->middleware('auth');
-// Route::delete('/transaksi/{id}', [TransaksiController::class, 'destroy'])->middleware('auth');
+Route::get('/transaksi/form/', [TransaksiController::class, 'create'])->middleware('auth');
+Route::post('/transaksi/store', [TransaksiController::class, 'store'])->middleware('auth');
+Route::get('transaksi/edit/{id}', [TransaksiController::class, 'edit'])->middleware('auth');
+Route::put('/transaksi/{id}', [TransaksiController::class, 'update'])->middleware('auth');
+Route::delete('/transaksi/{id}', [TransaksiController::class, 'destroy'])->middleware('auth');
+
 
 // karyawan
 Route::get('/karyawan', [KaryawanController::class, 'index'])->middleware('auth');

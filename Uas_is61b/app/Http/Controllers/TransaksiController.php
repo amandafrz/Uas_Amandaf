@@ -23,8 +23,9 @@ class TransaksiController extends Controller
      */
     public function create()
     {
-
-        return view('transaksi.form');
+        $kar = Karyawan::all();
+        $pro = Produk::all();
+        return view('transaksi.form', compact('kar', 'pro'));
     }
 
     /**
@@ -32,13 +33,11 @@ class TransaksiController extends Controller
      */
     public function store(Request $request)
     {
-
         $trs = new transaksi;
         $trs->kode = $request->kode;
         $trs->karyawans_id = $request->karyawan;
         $trs->nofak = $request->nofak;
         $trs->tanggal = $request->tanggal;
-        $trs->nama = $request->nama;
         $trs->produks_id = $request->produk;
         $trs->jumlah = $request->jumlah;
         $trs->harga = $request->harga;
@@ -62,7 +61,7 @@ class TransaksiController extends Controller
      */
     public function edit(string $id)
     {
-        $mhs = Transaksi::find($id);
+        $trs = Transaksi::find($id);
         return view('Transaksi.edit',compact());
     }
 
@@ -72,13 +71,12 @@ class TransaksiController extends Controller
     public function update(Request $request, string $id)
     {
         $trs = Transaksi::find($id);
-        $trs->kdm = $request->kdm;
-        $trs->tanggal = $request->tanggal;
-        $trs->nama = $request->nama;
+        $trs->nofak = $request->nofak;
+        $trs->tanggal= $request->tanggal;
+        $trs->jumlah = $request->jumlah;
+        $trs->harga = $request->harga;
         $trs->total = $request->total;
-        $trs->kdd = $request->kdd;
-        $trs->qty = $request->qty;
-        $mhs->save();
+        $trs->save();
 
         return redirect('/transaksi/');
     }
