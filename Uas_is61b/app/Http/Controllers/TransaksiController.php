@@ -1,13 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Transaksi;
 use Illuminate\Http\Request;
+use App\Models\Karyawan;
+use App\Models\Produk;
 
 class TransaksiController extends Controller
 {
-
-
     /**
      * Display a listing of the resource.
      */
@@ -24,7 +24,7 @@ class TransaksiController extends Controller
     public function create()
     {
 
-        return view('transaksi.form',compact());
+        return view('transaksi.form');
     }
 
     /**
@@ -32,23 +32,18 @@ class TransaksiController extends Controller
      */
     public function store(Request $request)
     {
-        // $this->validate($request,[
-        //     'nim' => 'required|unique:mahasiswas,nim',
-        //     'nama' => 'required',
-        //     'foto' => 'required|max:10000|image',
-        // ],[
-        //     'required' => ':attribute Harus Diisi',
-        //     'unique' => ':attribute sudah pernah digunakan, silakan pilih :attribute lain',
-        // ]);
 
         $trs = new transaksi;
-        $trs->kdm = $request->kdm;
+        $trs->kode = $request->kode;
+        $trs->karyawans_id = $request->karyawan;
+        $trs->nofak = $request->nofak;
         $trs->tanggal = $request->tanggal;
         $trs->nama = $request->nama;
+        $trs->produks_id = $request->produk;
+        $trs->jumlah = $request->jumlah;
+        $trs->harga = $request->harga;
         $trs->total = $request->total;
-        $trs->kdd = $request->kdd;
-        $trs->qty = $request->qty;
-        $mhs->save();
+        $trs->save();
 
 
         return redirect('/transaksi/');

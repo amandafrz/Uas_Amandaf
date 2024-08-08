@@ -141,6 +141,12 @@
                 <span class="menu-header-text" data-i18n="Master">Master</span>
               </li>
               <li class="menu-item">
+                <a href="/karyawan" class="menu-link">
+                  <i class="menu-icon tf-icons ri-list-unordered"></i>
+                  <div data-i18n="Karyawan">Karyawan</div>
+                </a>
+              </li>
+              <li class="menu-item">
                 <a href="/kategori" class="menu-link">
                   <i class="menu-icon tf-icons ri-list-unordered"></i>
                   <div data-i18n="Kategori">Kategori</div>
@@ -167,13 +173,13 @@
             </li>
               </li>
               <li class="menu-item">
-                <a href="/produk" class="menu-link">
+                <a href="/pembelian" class="menu-link">
                   <i class="menu-icon tf-icons ri-product-hunt-line"></i>
                   <div data-i18n="Pembelian">Pembelian</div>
                 </a>
               </li>
             <li class="menu-item">
-                <a href="/supplier" class="menu-link">
+                <a href="/penjualan" class="menu-link">
                   <i class="menu-icon tf-icons ri-truck-line"></i>
                   <div data-i18n="Penjualan">Penjualan</div>
                 </a>
