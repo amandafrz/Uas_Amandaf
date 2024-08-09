@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Transaksii;
+use App\Models\Kategori;
 class TransaksiiController extends Controller
 {
     /**
@@ -36,7 +37,6 @@ class TransaksiiController extends Controller
         $trs->produk = $request->produk;
         $trs->jumlah = $request->jumlah;
         $trs->harga = $request->harga;
-        $trs->total = $request->total;
         $trs->save();
         return redirect('/transaksii/');
     }
@@ -54,7 +54,7 @@ class TransaksiiController extends Controller
      */
     public function edit(string $id)
     {
-        $tr = Transaksii::find($id);
+        $trs = Transaksii::find($id);
         return view('transaksii.edit',compact('trs'));
     }
 
@@ -65,13 +65,11 @@ class TransaksiiController extends Controller
     {
         $trs = Transaksii::find($id);
         $trs->kode = $request->kode;
-        $trs->karyawans_id = $request->karyawan;
         $trs->nofak = $request->nofak;
         $trs->tanggal = $request->tanggal;
         $trs->produk = $request->produk;
         $trs->jumlah = $request->jumlah;
         $trs->harga = $request->harga;
-        $trs->total = $request->total;
         $trs->save();
         return redirect('/transaksii/');
     }

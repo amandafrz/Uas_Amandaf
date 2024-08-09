@@ -22,7 +22,7 @@
                     <th>Produk</th>
                     <th>Quantity</th>
                     <th>Harga</th>
-                    <th>Total</th>
+
                     <th>Action</th>
                 </tr>
             </thead>
@@ -36,7 +36,7 @@
                         <td>{{ $item->produk }}</td>
                         <td>{{ $item->jumlah }}</td>
                         <td>{{ $item->harga }}</td>
-                        <td>{{ $item->total }}</td>
+
                         <td>
                             <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#detail{{ $item->id }}">
                                 <i class="fa fa-eye"></i>
@@ -80,10 +80,7 @@
                                                         <td>Harga</td>
                                                         <th>{{ $item->harga }}</th>
                                                     </tr>
-                                                    <tr>
-                                                        <td>Total</td>
-                                                        <th>{{ $item->total }}</th>
-                                                    </tr>
+
 
                                                 </tbody>
                                             </table>

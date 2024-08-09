@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('produk');
             $table->integer('jumlah');
             $table->decimal('harga');
-            $table->decimal('total');
             $table->timestamps();
         });
     }

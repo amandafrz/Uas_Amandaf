@@ -53,10 +53,7 @@
                 <label class="form-label">Harga</label>
                 <input type="text" class="form-control" name="harga" required>
             </div>
-            <div class="mb-3">
-                <label class="form-label">Total</label>
-                <input type="text" class="form-control" name="total">
-            </div>
+
             <button type="submit" class="btn btn-primary">Tambah Data</button>
         </form>
     </div>
