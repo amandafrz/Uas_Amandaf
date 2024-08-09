@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Tambah Transaksi')
+@section('title','New Zikra || Transaksi')
 
 @section('css')
 <link rel="icon" type="image/x-icon" href="{{asset('assets/img/favicon/favicon.ico')}}" />
@@ -24,54 +24,45 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        Tambah Transaksi
+    </div>
     </div>
     <div class="card-body">
-        <form method="post" action="/transaksi1/store/">
+        <form method="post" action="/produk/{{$pro->id}}">
+            @method('PUT')
             @csrf
             <div class="mb-3">
-                <label class="form-label">Kode Transaksi</label>
-                <input type="text" class="form-control" name="kode" required>
+                <label class="form-label">Kode Produk</label>
+                <input type="text" value="{{$pro->kode}}" class="form-control" name="kode">
             </div>
             <div class="mb-3">
-                <label class="form-label">Nomor Faktur</label>
-                <input type="text" class="form-control" name="nofak" required>
+                <label class="form-label">Nama Produk</label>
+                <input type="text" value="{{$pro->nm_produk}}" class="form-control" name="nm_produk">
             </div>
             <div class="mb-3">
-                <label class="form-label">Nama Karyawan</label>
-                <select name="karyawan" class="form-control" id="nm_kar">
-                    <option value="">-Pilih Karyawan-</option>
-                    @foreach ($kar as $item)
-                        <option value="{{ $item->id }}">{{ $item->nm_kar }}</option>
-                    @endforeach
-                </select>
+                <label class="form-label">Kategori</label>
+                <input type="text" value="{{$pro->kategoris_id}}" class="form-control" name="nm_produk">
             </div>
             <div class="mb-3">
-                <label class="form-label">Tanggal Transaksi</label>
-                <input type="text" class="form-control" name="date" required>
+                <label class="form-label">Merk</label>
+                <input type="text" value="{{$pro->merk}}" class="form-control" name="merk">
             </div>
             <div class="mb-3">
-                <label class="form-label">Produk</label>
-                <select name="karyawan" class="form-control" id="nm_kar">
-                    <option value="">-Pilih Produk-</option>
-                    @foreach ($pro as $item)
-                        <option value="{{ $item->id }}">{{ $item->nm_produk }}</option>
-                    @endforeach
-                </select>
+                <label class="form-label">Harga Beli</label>
+                <input type="text" value="{{$pro->harga_bel}}" class="form-control" name="harga_bel">
             </div>
             <div class="mb-3">
-                <label class="form-label">Jumlah</label>
-                <input type="text" class="form-control" name="jumlah">
+                <label class="form-label">Diskon</label>
+                <input type="text" value="{{$pro->diskon}}" class="form-control" name="diskon">
             </div>
             <div class="mb-3">
-                <label class="form-label">Harga</label>
-                <input type="text" class="form-control" name="harga" required>
+                <label class="form-label">Harga Jual</label>
+                <input type="text" value="{{$pro->harga_jul}}" class="form-control" name="harga_jul">
             </div>
             <div class="mb-3">
-                <label class="form-label">Total</label>
-                <input type="text" class="form-control" name="total" required>
+                <label class="form-label">Stok</label>
+                <input type="text" value="{{$pro->stock}}" class="form-control" name="stock">
             </div>
-            <button type="submit" class="btn btn-primary">Tambah Data</button>
+            <button type="submit" class="btn btn-primary">Edit Data</button>
         </form>
     </div>
 </div>

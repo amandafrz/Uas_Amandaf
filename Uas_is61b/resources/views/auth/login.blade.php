@@ -206,7 +206,7 @@
 
             <p class="text-center">
               <span>New on our platform?</span>
-              <a href="/auth/login">
+              <a href="/register">
                 <span>Create an account</span>
               </a>
             </p>

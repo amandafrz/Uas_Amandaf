@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 @section('title','New Zikra || Produk')
 
 @section('css')
@@ -79,4 +79,4 @@
 <script src="{{asset('assets/vendor/libs/typeahead-js/typeahead.js')}}"></script>
 <script src="{{asset('assets/vendor/js/menu.js')}}"></script>
 <script src="{{asset('assets/js/main.js')}}"></script>
-@endsection
+@endsection --}}

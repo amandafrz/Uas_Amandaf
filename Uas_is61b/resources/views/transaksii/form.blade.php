@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','New Zikra || Produk')
+@section('title', 'Tambah Transaksi')
 
 @section('css')
 <link rel="icon" type="image/x-icon" href="{{asset('assets/img/favicon/favicon.ico')}}" />
@@ -24,45 +24,40 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-    </div>
+        Tambah Transaksi
     </div>
     <div class="card-body">
-        <form method="post" action="/produk/{{$pro->id}}">
-            @method('PUT')
+        <form method="post" action="/transaksii/store/">
             @csrf
             <div class="mb-3">
-                <label class="form-label">Kode Produk</label>
-                <input type="text" value="{{$pro->kode}}" class="form-control" name="kode">
+                <label class="form-label">Kode Transaksi</label>
+                <input type="text" class="form-control" name="kode" required>
             </div>
             <div class="mb-3">
-                <label class="form-label">Nama Produk</label>
-                <input type="text" value="{{$pro->nm_produk}}" class="form-control" name="nm_produk">
+                <label class="form-label">Nomor Faktur</label>
+                <input type="text" class="form-control" name="nofak" required>
             </div>
             <div class="mb-3">
-                <label class="form-label">Kategori</label>
-                <input type="text" value="{{$pro->kategoris_id}}" class="form-control" name="nm_produk">
+                <label class="form-label">Tanggal Transaksi</label>
+                <input type="date" class="form-control" name="tanggal" required>
             </div>
             <div class="mb-3">
-                <label class="form-label">Merk</label>
-                <input type="text" value="{{$pro->merk}}" class="form-control" name="merk">
+                <label class="form-label">Produk</label>
+                <input type="text" class="form-control" name="produk" required>
             </div>
             <div class="mb-3">
-                <label class="form-label">Harga Beli</label>
-                <input type="text" value="{{$pro->harga_bel}}" class="form-control" name="harga_bel">
+                <label class="form-label">Jumlah</label>
+                <input type="text" class="form-control" name="jumlah" required>
             </div>
             <div class="mb-3">
-                <label class="form-label">Diskon</label>
-                <input type="text" value="{{$pro->diskon}}" class="form-control" name="diskon">
+                <label class="form-label">Harga</label>
+                <input type="text" class="form-control" name="harga" required>
             </div>
             <div class="mb-3">
-                <label class="form-label">Harga Jual</label>
-                <input type="text" value="{{$pro->harga_jul}}" class="form-control" name="harga_jul">
+                <label class="form-label">Total</label>
+                <input type="text" class="form-control" name="total">
             </div>
-            <div class="mb-3">
-                <label class="form-label">Stok</label>
-                <input type="text" value="{{$pro->stock}}" class="form-control" name="stock">
-            </div>
-            <button type="submit" class="btn btn-primary">Edit Data</button>
+            <button type="submit" class="btn btn-primary">Tambah Data</button>
         </form>
     </div>
 </div>

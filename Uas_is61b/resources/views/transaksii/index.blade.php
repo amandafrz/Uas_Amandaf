@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','New Zikra || Transaksi')
+@section('title','New Zikra || Transaksii')
 
 @section('css')
 <!-- Pastikan Anda memuat CSS Bootstrap -->
@@ -9,16 +9,17 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <a href="/transaksi1/form/" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Data</a>
+        <a href="/transaksii/form/" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Data</a>
     </div>
     <div class="card-body">
         <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>No</th>
+                    <th>Kode Transaksi</th>
                     <th>Nomor Faktur</th>
                     <th>Tanggal Transaksi</th>
-                    <th> Produk</th>
+                    <th>Produk</th>
                     <th>Quantity</th>
                     <th>Harga</th>
                     <th>Total</th>
@@ -26,14 +27,13 @@
                 </tr>
             </thead>
             <tbody>
-                @forelse ($tr as $item)
+                @forelse ($trs as $item)
                     <tr>
                         <td>{{ $nomor++ }}</td>
                         <td>{{ $item->kode }}</td>
                         <td>{{ $item->nofak }}</td>
-                        <td>{{ $item->karyawans->nm_kar }}</td>
                         <td>{{ $item->tanggal }}</td>
-                        <td>{{ $item->produks->nm_produk }}</td>
+                        <td>{{ $item->produk }}</td>
                         <td>{{ $item->jumlah }}</td>
                         <td>{{ $item->harga }}</td>
                         <td>{{ $item->total }}</td>
@@ -56,6 +56,11 @@
                                             <table class="table">
                                                 <tbody>
                                                     <tr>
+                                                        <td>Kode Transaksi</td>
+                                                        <th>{{ $item->kode }}</th>
+                                                    </tr>
+
+                                                    <tr>
                                                         <td>Nomor Faktur</td>
                                                         <th>{{ $item->nofak }}</th>
                                                     </tr>
@@ -65,10 +70,10 @@
                                                     </tr>
                                                     <tr>
                                                         <td>Produk</td>
-                                                        <th scope="row">{{ $item->produks->nm_produk }}</th>
+                                                        <th>{{ $item->produk }}</th>
                                                     </tr>
                                                     <tr>
-                                                        <td>Jumlah</td>
+                                                        <td>Quantity</td>
                                                         <th>{{ $item->jumlah }}</th>
                                                     </tr>
                                                     <tr>
@@ -77,7 +82,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>Total</td>
-                                                        <th>{{ $item->harga_jul }}</th>
+                                                        <th>{{ $item->total }}</th>
                                                     </tr>
 
                                                 </tbody>
@@ -90,7 +95,7 @@
                                 </div>
                             </div>
 
-                            <a href="/transaksi1/edit/{{ $item->id }}" class="btn btn-info btn-xs"><i class="fa fa-pencil-alt"></i></a>
+                            <a href="/transaksii/edit/{{ $item->id }}" class="btn btn-info btn-xs"><i class="fa fa-pencil-alt"></i></a>
 
                             <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#hapus{{ $item->id }}">
                                 <i class="fa fa-trash"></i>
@@ -111,7 +116,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                            <form action="/transaksi1/{{ $item->id }}" method="post">
+                                            <form action="/transaksii/{{ $item->id }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-primary">Hapus</button>
@@ -124,7 +129,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="9" class="text-center">Tidak Ada Data</td>
+                        <td colspan="10" class="text-center">Tidak Ada Data</td>
                     </tr>
                 @endforelse
             </tbody>

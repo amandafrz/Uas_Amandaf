@@ -179,7 +179,7 @@
                 </a>
               </li>
                 <li class="menu-item">
-                    <a href="/transaksi1" class="menu-link">
+                    <a href="/transaksii" class="menu-link">
                       <i class="menu-icon tf-icons ri-truck-line"></i>
                       <div data-i18n="Transaksi">Transaksi</div>
                     </a>

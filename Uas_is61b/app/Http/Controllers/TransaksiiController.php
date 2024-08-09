@@ -1,12 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Transaksi;
-use Illuminate\Http\Request;
-use App\Models\Karyawan;
-use App\Models\Produk;
 
-class TransaksiController extends Controller
+use Illuminate\Http\Request;
+use App\Models\Transaksii;
+class TransaksiiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +12,8 @@ class TransaksiController extends Controller
     public function index()
     {
         $nomor = 1;
-        $trs = Transaksi::all();
-        return view('transaksi.index',compact('nomor','trs'));
+        $trs = Transaksii::all();
+        return view('transaksii.index',compact('nomor','trs'));
     }
 
     /**
@@ -23,9 +21,7 @@ class TransaksiController extends Controller
      */
     public function create()
     {
-        $kar = Karyawan::all();
-        $pro = Produk::all();
-        return view('transaksi.form', compact('kar', 'pro'));
+        return view('transaksii.form');
     }
 
     /**
@@ -33,19 +29,16 @@ class TransaksiController extends Controller
      */
     public function store(Request $request)
     {
-        $trs = new transaksi;
+        $trs = new transaksii;
         $trs->kode = $request->kode;
-        $trs->karyawans_id = $request->karyawan;
         $trs->nofak = $request->nofak;
         $trs->tanggal = $request->tanggal;
-        $trs->produks_id = $request->produk;
+        $trs->produk = $request->produk;
         $trs->jumlah = $request->jumlah;
         $trs->harga = $request->harga;
         $trs->total = $request->total;
         $trs->save();
-
-
-        return redirect('/transaksi/');
+        return redirect('/transaksii/');
     }
 
     /**
@@ -61,8 +54,8 @@ class TransaksiController extends Controller
      */
     public function edit(string $id)
     {
-        $trs = Transaksi::find($id);
-        return view('Transaksi.edit',compact());
+        $tr = Transaksii::find($id);
+        return view('transaksii.edit',compact('trs'));
     }
 
     /**
@@ -70,15 +63,17 @@ class TransaksiController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $trs = Transaksi::find($id);
+        $trs = Transaksii::find($id);
+        $trs->kode = $request->kode;
+        $trs->karyawans_id = $request->karyawan;
         $trs->nofak = $request->nofak;
-        $trs->tanggal= $request->tanggal;
+        $trs->tanggal = $request->tanggal;
+        $trs->produk = $request->produk;
         $trs->jumlah = $request->jumlah;
         $trs->harga = $request->harga;
         $trs->total = $request->total;
         $trs->save();
-
-        return redirect('/transaksi/');
+        return redirect('/transaksii/');
     }
 
     /**
@@ -86,9 +81,9 @@ class TransaksiController extends Controller
      */
     public function destroy(string $id)
     {
-        $trs = Transaksi::find($id);
-        $trs->delete();
+        $tr = Transaksii::find($id);
+        $tr->delete();
 
-        return redirect('/transaksi/');
+        return redirect('/transaksii/');
     }
 }
