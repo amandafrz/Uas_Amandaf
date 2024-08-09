@@ -36,13 +36,13 @@ Route::get('/kategori/edit/{id}', [KategoriController::class, 'edit'])->middlewa
 Route::put('/kategori/{id}', [KategoriController::class, 'update'])->middleware('auth');
 Route::delete('/kategori/{id}', [KategoriController::class, 'destroy'])->middleware('auth');
 
-// // produk
-// Route::get('/produk', [ProdukController::class, 'index'])->middleware('auth');
-// Route::get('/produk/form/', [ProdukController::class, 'create'])->middleware('auth');
-// Route::post('/produk/store/', [ProdukController::class, 'store'])->middleware('auth');
-// Route::get('/produk/edit/{id}', [ProdukController::class, 'edit'])->middleware('auth');
-// Route::put('/produk/{id}', [ProdukController::class, 'update'])->middleware('auth');
-// Route::delete('/produk/{id}', [ProdukController::class, 'destroy'])->middleware('auth');
+// produk
+Route::get('/produk', [ProdukController::class, 'index'])->middleware('auth');
+Route::get('/produk/form/', [ProdukController::class, 'create'])->middleware('auth');
+Route::post('/produk/store/', [ProdukController::class, 'store'])->middleware('auth');
+Route::get('/produk/edit/{id}', [ProdukController::class, 'edit'])->middleware('auth');
+Route::put('/produk/{id}', [ProdukController::class, 'update'])->middleware('auth');
+Route::delete('/produk/{id}', [ProdukController::class, 'destroy'])->middleware('auth');
 
 // supplier
 Route::get('/supplier', [SupplierController::class, 'index'])->middleware('auth');

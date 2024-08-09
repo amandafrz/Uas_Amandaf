@@ -1,4 +1,4 @@
-{{-- @extends('layouts.master')
+@extends('layouts.master')
 @section('title','New Zikra || Produk')
 
 @section('css')
@@ -20,9 +20,8 @@
                     <th>Nama Produk</th>
                     <th>Kategori</th>
                     <th>Merk</th>
-                    <th>Harga Beli</th>
-                    <th>Diskon</th>
-                    <th>Harga Jual</th>
+                    <th>Harga </th>
+
                     <th>Stok</th>
                     <th>Action</th>
                 </tr>
@@ -35,9 +34,8 @@
                         <td>{{ $item->nm_produk }}</td>
                         <td>{{ $item->kategoris->nm_kat }}</td>
                         <td>{{ $item->merk }}</td>
-                        <td>{{ $item->harga_bel }}</td>
-                        <td>{{ $item->diskon }}</td>
-                        <td>{{ $item->harga_jul }}</td>
+                        <td>{{ $item->hargaa }}</td>
+
                         <td>{{ $item->stock }}</td>
                         <td>
                             <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#detail{{ $item->id }}">
@@ -74,17 +72,10 @@
                                                         <th>{{ $item->merk }}</th>
                                                     </tr>
                                                     <tr>
-                                                        <td>Harga Beli</td>
-                                                        <th>{{ $item->harga_bel }}</th>
+                                                        <td>Harga </td>
+                                                        <th>{{ $item->hargaa }}</th>
                                                     </tr>
-                                                    <tr>
-                                                        <td>Diskon</td>
-                                                        <th>{{ $item->diskon }}</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Harga Jual</td>
-                                                        <th>{{ $item->harga_jul }}</th>
-                                                    </tr>
+
                                                     <tr>
                                                         <td>Stok</td>
                                                         <th>{{ $item->stock }}</th>
@@ -146,4 +137,4 @@
 <!-- Pastikan Anda memuat JS jQuery dan Bootstrap -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-@endsection --}}
+@endsection

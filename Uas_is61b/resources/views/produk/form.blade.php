@@ -1,4 +1,4 @@
-{{-- @extends('layouts.master')
+@extends('layouts.master')
 @section('title', 'Tambah Produk')
 
 @section('css')
@@ -51,17 +51,10 @@
                 <input type="text" class="form-control" name="merk" required>
             </div>
             <div class="mb-3">
-                <label class="form-label">Harga Beli</label>
-                <input type="text" class="form-control" name="harga_bel" required>
+                <label class="form-label">Harga</label>
+                <input type="text" class="form-control" name="hargaa" required>
             </div>
-            <div class="mb-3">
-                <label class="form-label">Diskon</label>
-                <input type="text" class="form-control" name="diskon">
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Harga Jual</label>
-                <input type="text" class="form-control" name="harga_jul" required>
-            </div>
+
             <div class="mb-3">
                 <label class="form-label">Stok Produk</label>
                 <input type="text" class="form-control" name="stock" required>
@@ -83,4 +76,4 @@
 <script src="{{asset('assets/vendor/libs/typeahead-js/typeahead.js')}}"></script>
 <script src="{{asset('assets/vendor/js/menu.js')}}"></script>
 <script src="{{asset('assets/js/main.js')}}"></script>
-@endsection --}}
+@endsection
