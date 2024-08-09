@@ -178,13 +178,8 @@
                   <div data-i18n="Pembelian">Pembelian</div>
                 </a>
               </li>
-            <li class="menu-item">
-                <a href="/penjualan" class="menu-link">
-                  <i class="menu-icon tf-icons ri-truck-line"></i>
-                  <div data-i18n="Penjualan">Penjualan</div>
-                </a>
                 <li class="menu-item">
-                    <a href="/transaksi" class="menu-link">
+                    <a href="/transaksi1" class="menu-link">
                       <i class="menu-icon tf-icons ri-truck-line"></i>
                       <div data-i18n="Transaksi">Transaksi</div>
                     </a>
