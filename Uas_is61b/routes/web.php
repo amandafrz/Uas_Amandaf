@@ -5,7 +5,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\PembelianController;
-use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\Transaksi1Controller;
 use App\Http\Controllers\KaryawanController;
 /*
 |--------------------------------------------------------------------------
@@ -59,12 +59,12 @@ Route::put('/pembelian/{id}', [PembelianController::class, 'update'])->middlewar
 Route::delete('/pembelian/{id}', [PembelianController::class, 'destroy'])->middleware('auth');
 
 // transaksi
-Route::get('/transaksi', [TransaksiController::class, 'index'])->middleware('auth');
-Route::get('/transaksi/form/', [TransaksiController::class, 'create'])->middleware('auth');
-Route::post('/transaksi/store', [TransaksiController::class, 'store'])->middleware('auth');
-Route::get('transaksi/edit/{id}', [TransaksiController::class, 'edit'])->middleware('auth');
-Route::put('/transaksi/{id}', [TransaksiController::class, 'update'])->middleware('auth');
-Route::delete('/transaksi/{id}', [TransaksiController::class, 'destroy'])->middleware('auth');
+Route::get('/transaksi1', [Transaksi1Controller::class, 'index'])->middleware('auth');
+Route::get('/transaksi1/form/', [Transaksi1Controller::class, 'create'])->middleware('auth');
+Route::post('/transaksi1/store', [Transaksi1Controller::class, 'store'])->middleware('auth');
+Route::get('transaksi1/edit/{id}', [Transaksi1Controller::class, 'edit'])->middleware('auth');
+Route::put('/transaksi1/{id}', [Transaksi1Controller::class, 'update'])->middleware('auth');
+Route::delete('/transaksi1/{id}', [Transaksi1Controller::class, 'destroy'])->middleware('auth');
 
 
 // karyawan
